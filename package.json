@@ -12,5 +12,8 @@
     "babel"
   ],
   "author": "aedunafy",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5"
+  }
 }
