@@ -11,6 +11,13 @@
     "yarn",
     "babel"
   ],
+  "scripts":{
+	  "build": "node scripts/build.js"
+	  "build": "node scripts/build.js"
+	  "build": "node scripts/build.js"
+	  "build": "node scripts/build.js"
+  }
+
   "author": "aedunafy",
   "license": "ISC",
   "devDependencies": {
