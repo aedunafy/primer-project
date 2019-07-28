@@ -1,6 +1,10 @@
+const path = require('path')
+const flow = require('rollup-plugin-flow-no-whitespace')
+const alias = require('rollup-plugin-alias')
+
 const banner = 
-	`Vue Build Tool 
-	 Test By AEDUNAFY
+	` Vue Practice Started : 26-July-2019
+                                  By AEDUNAFY
 	`
 
 const aliases = require('./alias')
@@ -8,10 +12,9 @@ const aliases = require('./alias')
 const resolve = p => {
 	const base = p.split('/')[0]
 	if (aliases[base]) {
-		console.log(p.slice(base.length + 1))
+		return path.resolve(aliases[base], p.slice(base.length + 1))
 	} else {
-		console.log('__dirname');
-		console.log(__dirname)
+		return path.resolve(__dirname, '../', p)
 	}
 }
 
@@ -42,7 +45,17 @@ function getConfig (name) {
 	const config = {
 		input: opts.entry,
 		external: opts.external,
+		plugins: [
+			flow(),
+			alias(Object.assign({}, aliases, opts.alias))
 
+		].concat(opts.plugins || []),
+		output: {
+			file: opts.dest,
+			format: opts.format,
+			banner: banner,
+			name : opts.moduleName || 'Vue'
+		}
 	}
 }
 if (process.env.TARGET) {

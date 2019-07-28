@@ -4,22 +4,21 @@
   "description": "Practice Project setup using npm, Yarn , Babel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js"
   },
   "keywords": [
     "npm",
     "yarn",
     "babel"
   ],
-  "scripts":{
-	  "build": "node scripts/build.js"
-  },
-
   "author": "aedunafy",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5"
+    "@babel/preset-env": "^7.5.5",
+    "flow-bin": "^0.104.0",
+    "rollup-plugin-alias": "^1.5.2",
+    "rollup-plugin-flow-no-whitespace": "^1.0.0"
   }
 }
