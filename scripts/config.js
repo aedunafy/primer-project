@@ -3,8 +3,9 @@ const flow = require('rollup-plugin-flow-no-whitespace')
 const alias = require('rollup-plugin-alias')
 
 const banner = 
-	` Vue Practice Started : 26-July-2019
-                                  By AEDUNAFY
+	`/* Vue Practice Started : 26-July-2019
+                                 By AEDUNAFY
+	 */
 	`
 
 const aliases = require('./alias')
@@ -57,6 +58,7 @@ function getConfig (name) {
 			name : opts.moduleName || 'Vue'
 		}
 	}
+	return config
 }
 if (process.env.TARGET) {
 	module.exports = getConfig(process.env.TARGET)
