@@ -8,10 +8,20 @@
 	(global = global || self, global.Vue = factory());
 }(this, function () { 'use strict';
 
+	/*  */
+	function initMixin (Vue) {
+		console.log('Mixin');
+		Vue.prototype._init = function (){
+			console.log('_init');
+		};
+	}
+
 	function Vue (options) {
 		console.log('Hi I am the starting!');
 		this._init(options);
 	}
+
+	initMixin(Vue);
 
 	return Vue;
 
