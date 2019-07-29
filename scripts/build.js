@@ -1,3 +1,4 @@
+const path = require('path')
 const rollup = require('rollup')
 const fs = require('fs')
 const terser = require('terser')
@@ -51,10 +52,26 @@ function buildEntry (config) {
 }
 
 function write (dest, code, zip) {
+	
+	function report() {
+		console.log(blue(path.relative(process.cwd(), dest)) + ' ' + getSize(code))
+	}
+
 	return new Promise((resolve, reject) => {
-		console.log(code)	
+		fs.writeFile(dest, code, err=> {
+			if (err) return reject(err)
+			report()
+		})	
 	})
 }
 function logError (e) {
 	console.log(e)
+}
+
+function getSize (code) {
+	return (code.length / 1024).toFixed(2) + 'kb'
+}
+
+function blue (str) {
+	return '\x1b[1m\x1b[34m' + str + '\x1b[39m\x1b[22m'
 }

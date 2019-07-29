@@ -3,11 +3,10 @@ const flow = require('rollup-plugin-flow-no-whitespace')
 const alias = require('rollup-plugin-alias')
 
 const banner = 
-	`/* Vue Practice Started : 26-July-2019
-                                 By AEDUNAFY
-	 */
-	`
-
+  '/*!\n' +
+  ` * AEDUNAFY (26-July-2019) \n`+
+  ` * (c) 2014-${new Date().getFullYear()} \n` +
+  ' */'
 const aliases = require('./alias')
 
 const resolve = p => {

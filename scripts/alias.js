@@ -3,6 +3,7 @@ const path = require('path')
 const resolve = p => path.resolve(__dirname, '../', p)
 
 module.exports = {
-	web: resolve('src/platforms/web')
+	web: resolve('src/platforms/web'),
+	core: resolve('src/core')
 }
 
