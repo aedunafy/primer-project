@@ -9,10 +9,14 @@
 }(this, function () { 'use strict';
 
 	/*  */
+
+	let uid = 0;
+
 	function initMixin (Vue) {
-		console.log('Mixin');
-		Vue.prototype._init = function (){
-			console.log('_init');
+		Vue.prototype._init = function (options){
+			const vm = this;
+			vm._uid = uid++;
+
 		};
 	}
 

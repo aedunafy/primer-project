@@ -1,7 +1,11 @@
 /* @flow */
-export function initMixin (Vue: Class<Component>) {
-	console.log('Mixin')
-	Vue.prototype._init = function (){
-		console.log('_init')
+
+let uid = 0
+
+export function initMixin (Vue:Class<Component>) {
+	Vue.prototype._init = function (options?: Object){
+		const vm: Component = this
+		vm._uid = uid++
+
 	}
 }

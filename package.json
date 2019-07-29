@@ -4,7 +4,8 @@
   "description": "Practice Project setup using npm, Yarn , Babel",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "flow": "flow check"
   },
   "keywords": [
     "npm",
