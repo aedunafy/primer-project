@@ -7,5 +7,16 @@ export function initMixin (Vue:Class<Component>) {
 		const vm: Component = this
 		vm._uid = uid++
 
+		vm._isVue = true 
+
+		console.log(vm.constructor.options)
+		console.log(options)
+
+		vm.$options = mergeOptions()
+
+			
 	}
 }
+
+
+

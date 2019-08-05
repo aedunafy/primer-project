@@ -17,6 +17,14 @@
 			const vm = this;
 			vm._uid = uid++;
 
+			vm._isVue = true; 
+
+			console.log(vm.constructor.options);
+			console.log(options);
+
+			vm.$options = mergeOptions();
+
+				
 		};
 	}
 
