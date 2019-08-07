@@ -1,8 +1,8 @@
 /* @flow */
 export type Config = {
 	 silent: boolean;
-}
+};
 
-export default {
+export default ({
 	silent: false
-}
+}: Config)

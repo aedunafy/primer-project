@@ -1,6 +1,9 @@
 const path = require('path')
 const flow = require('rollup-plugin-flow-no-whitespace')
 const alias = require('rollup-plugin-alias')
+const buble = require('rollup-plugin-buble')
+const replace = require('rollup-plugin-replace')
+const version = require('../package.json').version
 
 const banner = 
   '/*!\n' +
@@ -57,6 +60,20 @@ function getConfig (name) {
 			name : opts.moduleName || 'Vue'
 		}
 	}
+
+	const vars = {
+		__VERSION__: version
+	}
+
+	if (opts.env) {
+		vars['process.env.NODE_ENV'] = JSON.stringify(opts.env)
+	}
+
+	config.plugins.push(replace(vars))
+
+	if (opts.transpile !== false) {
+		config.plugins.push(buble())
+	}
 	return config
 }
 if (process.env.TARGET) {
@@ -65,3 +82,6 @@ if (process.env.TARGET) {
 	exports.getBuild = getConfig
 	exports.getAllBuilds = () => Object.keys(builds).map(getConfig)
 }
+
+
+
