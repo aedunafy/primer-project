@@ -9,10 +9,7 @@ export function initMixin (Vue:Class<Component>) {
 
 		vm._isVue = true 
 
-		console.log(vm.constructor.options)
-		console.log(options)
-
-		vm.$options = mergeOptions()
+		//vm.$options = mergeOptions()
 
 			
 	}
