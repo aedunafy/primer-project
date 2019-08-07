@@ -1,7 +1,6 @@
 import { initMixin } from './init'
 
-function Vue (options) {
-	console.log('Hi I am the starting!')
+function Vue (options) {	
 	this._init(options)
 }
 
