@@ -6,5 +6,6 @@ declare interface GlobalAPI {
 	options: Object;
 	
 	use: (plugin: Function | Object) => GlobalAPI;
+	mixin: (mixin: Object) => GlobalAPI;
 	
 }

@@ -6,6 +6,7 @@ import {
 
 import {ASSET_TYPES} from 'shared/constants'
 import {initUse} from './use'
+import {initMixin} from './mixin'
 import builtInComponents from '../components/index'
 
 export function initGlobalAPI (Vue: GlobalAPI) {
@@ -31,6 +32,7 @@ export function initGlobalAPI (Vue: GlobalAPI) {
 	 extend(Vue.options.components, builtInComponents)
 	 
 	 initUse(Vue)
+	 initMixin(Vue)
 	 
   }
 }
