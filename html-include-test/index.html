@@ -1,10 +1,13 @@
 <html>
 	<body>
 		<script type="text/javascript" src="../../primer-project/dist/vue.js"></script>
-
+		 <script src="./index.js"></script>  
+		<div id="app" class="app"></div>
 		<script>
+		Vue.use(myPlugin, {test: 10});
+		
 		new Vue({
-		    el: '#example',
+		    el: 'app',
 		    data: { hello: 'Hello World!' }
 		})
 	    </script>
