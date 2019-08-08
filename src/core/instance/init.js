@@ -8,7 +8,7 @@ export function initMixin (Vue: Class<Component>) {
 		const vm: Component = this
 		vm._uid = uid++
 		vm._isVue = true
-		vm.$options = {}
+		//vm.$options = {}
 
 			
 	}

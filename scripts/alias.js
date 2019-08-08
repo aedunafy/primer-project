@@ -4,6 +4,7 @@ const resolve = p => path.resolve(__dirname, '../', p)
 
 module.exports = {
 	web: resolve('src/platforms/web'),
-	core: resolve('src/core')
+	core: resolve('src/core'),
+	shared: resolve('src/shared'),
 }
 
