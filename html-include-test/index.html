@@ -5,7 +5,10 @@
 		<div id="app" class="app"></div>
 		<script>
 		Vue.use(myPlugin, {test: 10, u: 90});
-		Vue.mixin({test1: 1, test2: 2})
+		
+		Vue.mixin({props: ["name", "age"], test2: 2})
+		Vue.mixin({props: {"name": String, "age": Number}, test3: 3})
+		
 		new Vue({
 		    el: 'app',
 		    data: { hello: 'Hello World!' }
