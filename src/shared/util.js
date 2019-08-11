@@ -1,6 +1,19 @@
 /* @flow */
 
 /**
+ * Get the raw type string of a value, e.g., [object Object].
+ */
+const _toString = Object.prototype.toString
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */
+export function isPlainObject (obj: any): boolean {
+  return _toString.call(obj) === '[object Object]'
+}
+
+/**
  * Create a cached version of a pure function.
  */
 export function cached<F: Function> (fn: F): F {	
@@ -17,7 +30,7 @@ export function cached<F: Function> (fn: F): F {
 const camelizeRE = /-(\w)/g
 export const camelize = cached((str: string): string => {
   return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '')
-})
+})       
 
 /**
  * Mix properties into target object.

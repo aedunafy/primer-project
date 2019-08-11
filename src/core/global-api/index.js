@@ -34,6 +34,8 @@ export function initGlobalAPI (Vue: GlobalAPI) {
 	 initUse(Vue)
 	 initMixin(Vue)
 	 
+	// console.log(Vue.options)
+	 
   }
 }
 

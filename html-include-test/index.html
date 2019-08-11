@@ -6,13 +6,17 @@
 		<script>
 		Vue.use(myPlugin, {test: 10, u: 90});
 		
-		Vue.mixin({props: ["name", "age"], test2: 2})
-		Vue.mixin({props: {"name": String, "age": Number}, test3: 3})
+		Vue.mixin({props: ["my-name", "age"], test2: 2})
+		Vue.mixin({test0: 2, test7:0})
+		Vue.mixin({propsn: {"name": {type :String} , "age": Number}, test3: 3})
 		
 		new Vue({
 		    el: 'app',
 		    data: { hello: 'Hello World!' }
 		})
+		
+		
+		
 	    </script>
 	</body>
 </html>
